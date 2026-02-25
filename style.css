@@ -6,7 +6,7 @@ body {
 }
 
 .timer-container {
-    width:300px;
+    width:160px;
     margin:40px auto;
     background:#303030;
     padding:20px;
@@ -17,32 +17,31 @@ body {
     margin-bottom:15px;
 }
 
-.row {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.title-wrapper, .time-wrapper {
+    width: 150px;
+    display: flex;
+    justify-content: center;
 }
 
-.btn-group {
-    display:flex;
-    gap:6px;
-}
-
-.time-row {
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
+.btn-wrapper {
+    width: 160px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 5px;
 }
 
 .title {
-    font-size:16px;
+    font-size:20px;
+    font-weight: bold;
 }
 
 .green { color:#00ee00; }
 .red { color:#ff0000; }
 
 .time {
-    font-size:40px;
+    font-size: 3rem;
+    text-align: center;
     font-weight:bold;
     margin-top:8px;
 }
@@ -59,18 +58,49 @@ button {
     border-radius:4px;
 }
 
-.btn-start {
-    background:#00aa00;
-    color:white;
+.btn-start { background:#00aa00; color:white; }
+.btn-stop { background:#aa0000; color:white; }
+.btn-add { background:#4444aa; color:white; }
+
+.sound-container {
+    width:160px;
+    margin:20px auto;
+    text-align:left;
+    font-size:14px;
 }
 
-.btn-stop {
-    background:#aa0000;
-    color:white;
+.sound-block {
+    margin-bottom:15px;
 }
 
-.btn-add {
-    background:#4444aa;
-    color:white;
-    align-self:flex-end;
+.sound-settings {
+    width: 160px;        /* 與 timer-container 同寬 */
+    margin: 20px auto 0; /* 置中，並與上方保持間距 */
+    text-align: left;    /* 文字靠左對齊，元素整齊排列 */
 }
+
+.sound-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;           /* 元素之間間距 */
+    margin-bottom: 6px; /* 每行間距 */
+}
+
+.sound-row label {
+    flex-shrink: 0;
+}
+
+.sound-row input[type="number"] {
+    width: 50px;
+}
+
+.sound-row input[type="range"] {
+    width: 80px;
+}
+
+.sound-row input[type="file"] {
+    width: 200px;
+}
+
+.sound-settings div { margin-bottom: 8px; }
+.sound-settings hr { margin: 12px 0; border-color: #666; }
