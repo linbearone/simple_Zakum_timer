@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>Zakum Timer Web</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="timer-container">
+    <div class="timer-block">
+        <div class="title green" id="timer1Title">系統綠方</div>
+        <div class="time" id="timer1">2:30</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="timer-block">
+        <div class="title red" id="timer2Title">黑水</div>
+        <div class="time" id="timer2">40</div>
+    </div>
+</div>
+
+<div class="controls">
+    <button onclick="startTimer1()">Timer1</button>
+    <button onclick="startTimer2()">Timer2</button>
+    <button onclick="add10()">+10</button>
+    <button onclick="stopAll()">Stop</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
