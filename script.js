@@ -88,4 +88,12 @@ function stopAll(){
     updateDisplay();
 }
 
+function stopTimer1(){
+    clearInterval(timer1Interval);
+}
+
+function stopTimer2(){
+    clearInterval(timer2Interval);
+}
+
 updateDisplay();
