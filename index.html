@@ -8,24 +8,37 @@
 <body>
 
 <div class="timer-container">
+
+    <!-- Timer1 -->
     <div class="timer-block">
-        <div class="title green" id="timer1Title">系統綠方</div>
+        <div class="row">
+            <div class="title green">系統綠方</div>
+            <div class="btn-group">
+                <button class="btn-start" onclick="startTimer1()">啟動</button>
+                <button class="btn-stop" onclick="stopTimer1()">停止</button>
+            </div>
+        </div>
         <div class="time" id="timer1">2:30</div>
     </div>
 
     <div class="divider"></div>
 
+    <!-- Timer2 -->
     <div class="timer-block">
-        <div class="title red" id="timer2Title">黑水</div>
-        <div class="time" id="timer2">40</div>
-    </div>
-</div>
+        <div class="row">
+            <div class="title red" id="timer2Title">黑水</div>
+            <div class="btn-group">
+                <button class="btn-start" onclick="startTimer2()">啟動</button>
+                <button class="btn-stop" onclick="stopTimer2()">停止</button>
+            </div>
+        </div>
 
-<div class="controls">
-    <button onclick="startTimer1()">Timer1</button>
-    <button onclick="startTimer2()">Timer2</button>
-    <button onclick="add10()">+10</button>
-    <button onclick="stopAll()">Stop</button>
+        <div class="time-row">
+            <div class="time" id="timer2">40</div>
+            <button class="btn-add" onclick="add10()">+10</button>
+        </div>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
