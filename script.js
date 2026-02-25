@@ -19,20 +19,23 @@ function formatTime(sec){
 function updateDisplay(){
     timer1El.textContent = formatTime(timer1Total);
     timer2El.textContent = timer2Total;
-
-    if(timer1Total === 10)
+    
+    // ===== Timer1 =====
+    if(timer1Total <= 10 && timer1Total >= 0)
         timer1El.style.color = "#00ee00";
-    else if(timer1Total === 150)
+    else
         timer1El.style.color = "white";
-
-    if(timer2Total === 10){
+    
+    // ===== Timer2 =====
+    if(timer2Total <= 10 && timer2Total >= 0){
         if(timer2SkillType === 1)
             timer2El.style.color = "#ff0000";
         else
             timer2El.style.color = "#00ee00";
     }
-    else if(timer2Total === 40)
+    else{
         timer2El.style.color = "white";
+    }
 }
 
 function startTimer1(){
