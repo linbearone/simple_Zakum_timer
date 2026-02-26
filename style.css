@@ -103,3 +103,15 @@ button {
 .sound-row input[type="file"] {
     width: 100%;
 }
+
+/* Chrome, Safari, Edge, Opera */
+.no-arrow::-webkit-outer-spin-button,
+.no-arrow::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.no-arrow[type=number] {
+    -moz-appearance: textfield;
+}
