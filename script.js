@@ -48,9 +48,9 @@ function saveSettings(){
             sec: parseInt(timer1SoundSec.value) || 10,
             volume: parseFloat(timer1Volume.value),
             freq: [
-                parseInt(timer1Freq1.value) || 0,
-                parseInt(timer1Freq2.value) || 0,
-                parseInt(timer1Freq3.value) || 0
+                (timer1Freq1.value === "" || parseInt(timer1Freq1.value) === 0) ? "" : parseInt(timer1Freq1.value),
+                (timer1Freq2.value === "" || parseInt(timer1Freq2.value) === 0) ? "" : parseInt(timer1Freq2.value),
+                (timer1Freq3.value === "" || parseInt(timer1Freq3.value) === 0) ? "" : parseInt(timer1Freq3.value)
             ]
         },
         timer2: {
@@ -58,9 +58,9 @@ function saveSettings(){
             sec: parseInt(timer2SoundSec.value) || 10,
             volume: parseFloat(timer2Volume.value),
             freq: [
-                parseInt(timer2Freq1.value) || 0,
-                parseInt(timer2Freq2.value) || 0,
-                parseInt(timer2Freq3.value) || 0
+                (timer2Freq1.value === "" || parseInt(timer2Freq1.value) === 0) ? "" : parseInt(timer2Freq1.value),
+                (timer2Freq2.value === "" || parseInt(timer2Freq2.value) === 0) ? "" : parseInt(timer2Freq2.value),
+                (timer2Freq3.value === "" || parseInt(timer2Freq3.value) === 0) ? "" : parseInt(timer2Freq3.value)
             ]
         }
     };
@@ -75,18 +75,18 @@ function loadSettings(){
         timer1SoundSec.value = settings.timer1.sec ?? 10;
         timer1Volume.value = settings.timer1.volume ?? 1;
 
-        timer1Freq1.value = settings.timer1.freq?.[0] ?? 0;
-        timer1Freq2.value = settings.timer1.freq?.[1] ?? 0;
-        timer1Freq3.value = settings.timer1.freq?.[2] ?? 0;
+        timer1Freq1.value = settings.timer1.freq?.[0] ?? "";
+        timer1Freq2.value = settings.timer1.freq?.[1] ?? "";
+        timer1Freq3.value = settings.timer1.freq?.[2] ?? "";
     }
     if(settings.timer2){
         timer2SoundEnable.checked = settings.timer2.enable ?? true;
         timer2SoundSec.value = settings.timer2.sec ?? 10;
         timer2Volume.value = settings.timer2.volume ?? 1;
 
-        timer2Freq1.value = settings.timer2.freq?.[0] ?? 0;
-        timer2Freq2.value = settings.timer2.freq?.[1] ?? 0;
-        timer2Freq3.value = settings.timer2.freq?.[2] ?? 0;
+        timer2Freq1.value = settings.timer2.freq?.[0] ?? "";
+        timer2Freq2.value = settings.timer2.freq?.[1] ?? "";
+        timer2Freq3.value = settings.timer2.freq?.[2] ?? "";
     }
 }
 loadSettings();
@@ -264,21 +264,23 @@ function defaultBeep(timer){
     }
     const volume = (timer===1) ? parseFloat(timer1Volume.value) : parseFloat(timer2Volume.value);
     const frequencies = (timer===1)
-    ? [parseInt(timer1Freq1.value) || 392,
+    ? [parseInt(timer1Freq1.value) || 0,
         parseInt(timer1Freq2.value) || 0,
         parseInt(timer1Freq3.value) || 0]
     : [parseInt(timer2Freq1.value) || 0,
         parseInt(timer2Freq2.value) || 0,
         parseInt(timer2Freq3.value) || 0]; 
     frequencies.forEach((freq,i)=>{
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.frequency.value = freq;
-        gain.gain.value = volume;
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start(audioCtx.currentTime + i*0.2);
-        osc.stop(audioCtx.currentTime + i*0.2 + 0.15);
+        if(freq > 0){  // 0 或空值就不發聲
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.frequency.value = freq;
+            gain.gain.value = volume;
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(audioCtx.currentTime + i*0.2);
+            osc.stop(audioCtx.currentTime + i*0.2 + 0.15);
+        }
     });
 }
 
