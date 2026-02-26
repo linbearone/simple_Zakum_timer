@@ -2,38 +2,38 @@ body {
     background: #202020;
     color: white;
     font-family: Arial;
-    text-align: center;
+    margin: 0;
+    
+    /* 讓整個畫面置中 */
+    display: flex;
+    justify-content: center;
 }
 
 .timer-container {
-    width: 100%;
-    max-width: 400px;  /* 最大寬度設定 */
-    margin: 40px auto;
+    width: 95%;
+    max-width: 420px;   /* 手機最大寬度 */
+    margin: 40px 0;
     background: #303030;
     padding: 20px;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
+/* 區塊 */
 .timer-block {
     margin-bottom: 15px;
 }
 
-.title-wrapper, .time-wrapper {
-    width: 150px;
+/* 標題與時間 */
+.title-wrapper,
+.time-wrapper {
     display: flex;
     justify-content: center;
-}
-
-.btn-wrapper {
-    width: 160px;
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    margin-top: 5px;
+    width: 100%;
 }
 
 .title {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -42,32 +42,44 @@ body {
 
 .time {
     font-size: 3rem;
-    text-align: center;
     font-weight: bold;
     margin-top: 8px;
+    text-align: center;
 }
 
+/* 按鈕區 */
+.btn-wrapper {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+    width: 100%;
+}
+
+/* 按鈕 */
+button {
+    flex: 1;                 /* 平均分配寬度 */
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-start { background: #00aa00; color: white; }
+.btn-stop  { background: #aa0000; color: white; }
+.btn-add   { background: #4444aa; color: white; }
+
+/* 分隔線 */
 .divider {
     border-top: 1px solid #666;
     margin: 15px 0;
 }
 
-button {
-    padding: 8px 12px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.btn-start { background: #00aa00; color: white; }
-.btn-stop { background: #aa0000; color: white; }
-.btn-add { background: #4444aa; color: white; }
-
+/* 音效區 */
 .sound-settings {
     width: 100%;
-    max-width: 400px;
-    margin: 20px auto 0;
+    margin-top: 10px;
     text-align: left;
     font-size: 14px;
 }
@@ -75,48 +87,19 @@ button {
 .sound-row {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 6px;
-}
-
-.sound-row label {
-    flex-shrink: 0;
-    font-size: 14px;
+    gap: 6px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;  /* 手機不會擠爆 */
 }
 
 .sound-row input[type="number"] {
-    width: 50px;
-    font-size: 14px;
+    width: 60px;
 }
 
 .sound-row input[type="range"] {
-    width: 80px;
+    flex: 1;
 }
 
 .sound-row input[type="file"] {
-    width: 200px;
-}
-
-@media (max-width: 500px) {
-    .timer-container {
-        width: 90%;  /* 在小螢幕上使用 90% 寬度 */
-    }
-
-    .title {
-        font-size: 1.5rem;
-    }
-
-    .time {
-        font-size: 2.5rem;
-    }
-
-    .btn-wrapper {
-        width: 100%;
-        display: grid;
-        gap: 5px;
-    }
-
-    button {
-        font-size: 12px;  /* 調整按鈕字型 */
-    }
+    width: 100%;
 }
