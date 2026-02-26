@@ -51,7 +51,11 @@
 
         <!-- Timer1 音效設定 -->
         <div class="sound-row">
-            <input type="checkbox" id="timer1SoundEnable"> 系統綠方音效
+            <label>
+                <input type="checkbox" id="timer1SoundEnable"> 
+                系統綠方音效
+            </label>
+            <button type="button" class="reset-btn" onclick="resetTimer1Defaults()">還原預設值</button>
         </div>
         <div class="sound-row">
             <label>提醒秒數：</label>
@@ -68,14 +72,18 @@
             <input type="number" id="timer1Freq3" placeholder="494" style="width:45px;" class="no-arrow">
         </div>
         <div class="sound-row">
-            <input type="file" id="timer1SoundFile">
+            <input type="file" id="timer1SoundFile" accept="audio/*">
         </div>
 
         <div class="divider"></div>
 
         <!-- Timer2 音效設定 -->
         <div class="sound-row">
-            <input type="checkbox" id="timer2SoundEnable"> 本方黑水音效
+            </label>
+                <input type="checkbox" id="timer2SoundEnable"> 
+                本方黑水音效
+            </label>
+            <button type="button" class="reset-btn" onclick="resetTimer2Defaults()">還原預設值</button>
         </div>
         <div class="sound-row">
             <label>提醒秒數：</label>
@@ -92,7 +100,7 @@
             <input type="number" id="timer2Freq3" placeholder="440" style="width:45px;" class="no-arrow">
         </div>
         <div class="sound-row">
-            <input type="file" id="timer2SoundFile">
+            <input type="file" id="timer2SoundFile" accept="audio/*">
         </div>
 
     </div>
