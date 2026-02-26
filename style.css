@@ -70,11 +70,26 @@ button {
 .btn-stop  { background: #aa0000; color: white; }
 .btn-add   { background: #4444aa; color: white; }
 
+.sound-row button.reset-btn {
+    margin-left: auto;
+    max-width: 90px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
 /* 分隔線 */
 .divider {
     border-top: 1px solid #666;
     margin: 15px 0;
 }
+
+
 
 /* 音效區 */
 .sound-settings {
