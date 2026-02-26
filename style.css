@@ -33,7 +33,7 @@ body {
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 
@@ -41,7 +41,7 @@ body {
 .red { color: #ff0000; }
 
 .time {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     margin-top: 8px;
     text-align: center;
