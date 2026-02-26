@@ -11,7 +11,7 @@ body {
 
 .timer-container {
     width: 95%;
-    max-width: 420px;   /* 手機最大寬度 */
+    max-width: 320px;   /* 手機最大寬度 */
     margin: 40px 0;
     background: #303030;
     padding: 20px;
@@ -33,7 +33,7 @@ body {
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -41,7 +41,7 @@ body {
 .red { color: #ff0000; }
 
 .time {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
     margin-top: 8px;
     text-align: center;
